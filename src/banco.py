@@ -47,7 +47,7 @@ def deleta_id(id):
     conn.commit()
     conn.close()
 
-#inserir_pessoa(1,"joão","sampa","sabado domingo","medico")
+#inserir_pessoa(24,"joão","sampa","(99)98765-4321","medico")
 dado=pesquisa_id(1)
 print(dado)
 deleta_id(1)
