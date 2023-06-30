@@ -1,1 +1,1 @@
-em branco
+digite cadastrar nome cidade telefone  profissao
