@@ -1,7 +1,9 @@
 import bot_busca_profissional
 import banco
+frase_dia = "bom dia"
 
 def comando(text, id):
+    global frase_dia
     dado=banco.pesquisa_id(id)
     if text[1] == "1":
         text =""""Você não está sozinho/a. Há ajuda disponível. Procure apoio e se recupere."
@@ -37,6 +39,18 @@ Grupo para quem esta lutando contra depressão e ansiedade: https://t.me/+j1ylkh
     elif text[1] == "5":
          text ="""Nós somos um grupo de estudantes que está desenvolvendo um sistema automatizado para auxiliar pessoas em seus tratamentos relacionados à ansiedade, depressão, obesidade e dependência química. Desenvolvemos essa aplicação com a esperança de que ela possa ser útil de alguma forma.
 /voltar"""
+    elif text[1] == "7":
+         text = frase_dia
+    elif text[1] == "8":
+        if dado != None:
+            text = text[3:]
+            n = len(text)
+            if n < 10:
+                frase_dia = text
+                text = "frase alterada com sucesso"
+            else:
+                text ="maximo tamanho permitido é de 10 caracteres"
+        else: text = "erro"
     elif text[1] == "6":
         if dado != None:
             texto="escolha /editar_nome /editar_profissao /editar_telefone /editar_localidade seus dadois atuais são"
@@ -53,14 +67,16 @@ selecione /1 se estiver passando por uma crise
 selecione /2 para encontrar um profissional da saúde
 selecione /3 para encontrar um grupo de apoio
 selecione /6 para editar seus dados
-selecione /5 se quiser saber mais sobre o nosso sistemama"""
+selecione /5 se quiser saber mais sobre o nosso sistemama
+selecione /8+frase para alterar a frase do dia"""
         else:
             text="""Olá, sou um assistente virtual aqui para auxiliá-lo hoje. Por favor, selecione uma das opções abaixo:
 selecione /1 se estiver passando por uma crise
 selecione /2 para encontrar um profissional da saúde
 selecione /3 para encontrar um grupo de apoio
 selecione /4 caso seja um profissional da area da suade
-selecione /5 se quiser saber mais sobre o nosso sistemama"""
+selecione /5 se quiser saber mais sobre o nosso sistemama
+selecione /7 para ver a frase do dia"""
         
 
     return text
