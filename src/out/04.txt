@@ -1,1 +1,1 @@
-/cadastrar ou /voltar
+digite cadastrar nome cidade telefone  profissao

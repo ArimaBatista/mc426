@@ -25,9 +25,15 @@ Grupo para quem esta lutando contra obesidade: https://t.me/+ZaKk1L5RZ7s1ZDMx
 Grupo para quem esta lutando contra depressão e ansiedade: https://t.me/+j1ylkh1QCjhlYjkx
 /voltar."""
     elif text[1] == "4":
-         text= "/cadastrar ou /voltar"
-    elif text== "/cadastrar":
-        banco.inserir_pessoa(id,"none","none","none","none")
+        text= "digite cadastrar nome cidade telefone  profissao"
+    elif text[:3] == "cad":
+        palavra = text.split()
+        temp = anl_tel(palavra[3])
+        if temp[1] =="o":
+            banco.inserir_pessoa(id, palavra[1], palavra[2], palavra[3], palavra[4])
+            text="cadastrado"
+        else:
+            text = temp
     elif text[1] == "5":
          text ="""Nós somos um grupo de estudantes que está desenvolvendo um sistema automatizado para auxiliar pessoas em seus tratamentos relacionados à ansiedade, depressão, obesidade e dependência química. Desenvolvemos essa aplicação com a esperança de que ela possa ser útil de alguma forma.
 /voltar"""
@@ -58,3 +64,16 @@ selecione /5 se quiser saber mais sobre o nosso sistemama"""
         
 
     return text
+def anl_tel(numero):
+    try:
+        n = int(numero)
+        print("nen")
+        if n >= 100000000000:
+            numero = "provavelmente digitou numero a mais"
+        elif n <=9999999999:
+            numero = "provavelmente digitou um digito a menos"
+        else:
+            numero = "o numero aceito"
+    except:
+        numero="numero invalido"
+    return numero
