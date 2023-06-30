@@ -2,8 +2,8 @@ import os
 import bot_comando
 
 def test_comparar_arquivos():
-    input_dir = 'in'
-    output_dir = 'out'
+    input_dir = 'src/in'
+    output_dir = 'src/out'
 
     for filename in os.listdir(input_dir):
         # Construir os caminhos completos para o arquivo de entrada e saída correspondente
